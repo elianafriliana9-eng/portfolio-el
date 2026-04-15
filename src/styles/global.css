@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --color-page-bg: #080d14;
+  --color-dark-space: #0d1b2a;
+  --color-page-cream: #e8dfc8;
+  --color-navy-text: #1a2e42;
+  --color-muted-navy: #2a3d52;
+  --color-accent-blue: #4a9eff;
+  --color-warm-gold: #f0c070;
+  --color-section-dark: #0a111a;
+  --color-deep-space-card: #0d1b2a;
+  --color-footer-bg: #05080c;
+  --font-display: "Orbitron", sans-serif;
+  --font-body: "Space Grotesk", sans-serif;
+}
+
+@keyframes star-pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #080d14;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #080d14;
+}
+
+img {
+  display: block;
+}
+
+.hero-star {
+  animation-name: star-pulse;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-star {
+    animation: none;
+    opacity: 0.75;
+    transform: none;
+  }
+}

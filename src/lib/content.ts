@@ -1,4 +1,4 @@
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { getCollection, getEntry, type CollectionEntry } from 'astro:content';
 
 import type {
   DiscoveryContent,
@@ -7,11 +7,28 @@ import type {
   NextDepartureContent,
   SpectrumBarProps,
 } from '../data/site';
-import { formatShortDate } from './format';
+import { formatLaunchTime, formatReadingTime, formatShortDate, toUtcDateInput } from './format';
 
 export type MissionEntry = CollectionEntry<'missions'>;
 export type ReportEntry = CollectionEntry<'reports'>;
 export type DepartureEntry = CollectionEntry<'departures'>;
+export type NewsEntry = CollectionEntry<'news'>;
+export type PageEntry = CollectionEntry<'pages'>;
+export type SingletonPageId = 'about' | 'science' | 'technology';
+
+function buildLaunchTimestamp(launchDate: Date, launchTime: string) {
+  const normalizedTime = launchTime.length === 5 ? `${launchTime}:00` : launchTime;
+  return new Date(`${toUtcDateInput(launchDate)}T${normalizedTime}Z`).getTime();
+}
+
+export function estimateReadingTime(body: string) {
+  const words = body.trim().split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.ceil(words / 200));
+}
+
+export function getReadingTimeLabel(body: string) {
+  return formatReadingTime(estimateReadingTime(body));
+}
 
 export async function getMissionEntries() {
   const entries = await getCollection('missions');
@@ -25,7 +42,24 @@ export async function getReportEntries() {
 
 export async function getDepartureEntries() {
   const entries = await getCollection('departures');
-  return entries.sort((left, right) => left.data.order - right.data.order);
+  return entries.sort(
+    (left, right) =>
+      buildLaunchTimestamp(left.data.launchDate, left.data.launchTime) -
+      buildLaunchTimestamp(right.data.launchDate, right.data.launchTime),
+  );
+}
+
+export async function getNewsEntries() {
+  const entries = await getCollection('news');
+  return entries.sort((left, right) => right.data.publishedAt.getTime() - left.data.publishedAt.getTime());
+}
+
+export async function getPageEntry(id: SingletonPageId) {
+  const entry = await getEntry('pages', id);
+  if (!entry) {
+    throw new Error(`Missing singleton page content for ${id}`);
+  }
+  return entry;
 }
 
 export function toMissionCard(entry: MissionEntry): MissionCardProps {
@@ -64,7 +98,8 @@ export function toNextDepartureContent(entry: DepartureEntry): NextDepartureCont
   return {
     title: 'Next Departure',
     label: 'T-Minus',
-    countdown: entry.data.countdown,
+    launchDate: toUtcDateInput(entry.data.launchDate),
+    launchTime: entry.data.launchTime,
     image: entry.data.image,
     allHref: '/departures/',
   };
@@ -73,6 +108,7 @@ export function toNextDepartureContent(entry: DepartureEntry): NextDepartureCont
 export function toLaunchRow(entry: DepartureEntry): LaunchRowProps {
   return {
     date: formatShortDate(entry.data.launchDate),
+    time: formatLaunchTime(entry.data.launchTime),
     title: entry.data.title,
     detail: entry.data.detail,
     href: `/departures/${entry.id}/`,

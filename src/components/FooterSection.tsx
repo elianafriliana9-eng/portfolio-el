@@ -17,7 +17,7 @@ export default function FooterSection({ directory, meta, policies }: FooterSecti
   return (
     <MotionConfig reducedMotion="user">
       <motion.footer
-        id="about"
+        id="site-footer"
         ref={ref}
         initial={{ opacity: 0, y: 40 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
@@ -25,7 +25,7 @@ export default function FooterSection({ directory, meta, policies }: FooterSecti
         className="bg-footer-bg py-18 sm:py-22"
       >
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-          <div className="grid gap-12 md:grid-cols-2 xl:grid-cols-[minmax(0,1.6fr)_minmax(0,0.8fr)_minmax(0,0.8fr)]">
+          <div className="grid gap-12 md:grid-cols-2 xl:grid-cols-[minmax(0,1.6fr)_minmax(0,0.95fr)_minmax(0,0.8fr)]">
             <div className="max-w-2xl">
               <h2 className="font-display text-[2.7rem] leading-none font-bold text-white">{meta.title}</h2>
               <p className="mt-6 max-w-xl text-[1.1rem] leading-8 text-white/60">{meta.description}</p>
@@ -33,7 +33,7 @@ export default function FooterSection({ directory, meta, policies }: FooterSecti
 
             <div>
               <h3 className="font-display text-[11px] uppercase tracking-[0.26em] text-white/80">Directory</h3>
-              <ul className="mt-6 space-y-4">
+              <ul className="mt-6 grid grid-cols-2 gap-x-6 gap-y-4">
                 {directory.map((item) => (
                   <li key={item.label}>
                     <a className="text-[1.1rem] text-white/60 transition-colors duration-300 hover:text-accent-blue" href={item.href}>

@@ -3,7 +3,7 @@ title: EUROPA / PLUME SALINITY ANALYSIS
 summary: Preliminary plume models suggest Europa's vented material contains a salinity profile consistent with long-term subsurface ocean circulation.
 label: Research Brief
 publishedAt: 2026-03-16
-image: /images/exoplanet.png
+image: /images/report-article-02.png
 spectrumBars: [28, 32, 46, 66, 58, 49, 72, 76, 62, 53, 44, 38]
 rangeStart: 0.4μm
 rangeEnd: 4.6μm

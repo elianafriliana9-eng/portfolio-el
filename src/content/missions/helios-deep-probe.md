@@ -8,7 +8,7 @@ order: 3
 vehicle: Helios Shield Platform
 missionWindow: 11-day perihelion science cycle
 destination: Inner Solar Observation Arc
-coverImage: /images/space-hero-bg.png
+coverImage: /images/mission-article-03.png
 ---
 ## Mission Objective
 

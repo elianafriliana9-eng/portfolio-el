@@ -8,7 +8,7 @@ order: 1
 vehicle: Selene Transfer Stack
 missionWindow: 18-month surface deployment
 destination: Shackleton Crater, Lunar South Pole
-coverImage: /images/rocket-launch.png
+coverImage: /images/mission-article-01.png
 ---
 ## Mission Objective
 

@@ -8,7 +8,7 @@ order: 2
 vehicle: Asterion Survey Craft
 missionWindow: 6-year transit and orbital insertion
 destination: Europa Transfer Corridor, Jovian System
-coverImage: /images/exoplanet.png
+coverImage: /images/mission-article-02.png
 ---
 ## Mission Objective
 

@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { useRef } from 'react';
 
 import type { LaunchRowProps, NextDepartureContent } from '../data/site';
+import LaunchCountdown from './LaunchCountdown';
 import { aeonEase, fadeUpTransition, inViewViewport } from './motion';
 
 interface DepartureSectionProps {
@@ -10,8 +11,8 @@ interface DepartureSectionProps {
   launches: LaunchRowProps[];
 }
 
-function LaunchRow({ date, detail, href, index, title }: LaunchRowProps & { index: number }) {
-  const ref = useRef<HTMLDivElement | null>(null);
+function LaunchRow({ date, detail, href, index, time, title }: LaunchRowProps & { index: number }) {
+  const ref = useRef<HTMLAnchorElement | null>(null);
   const isInView = useInView(ref, { once: true, amount: 0.5 });
 
   return (
@@ -23,7 +24,10 @@ function LaunchRow({ date, detail, href, index, title }: LaunchRowProps & { inde
       transition={{ duration: 0.78, delay: index * 0.14, ease: aeonEase }}
       className="group grid gap-4 border-b border-white/10 py-6 md:grid-cols-[200px_minmax(0,1fr)] md:gap-6"
     >
-      <div className="font-display text-[1.05rem] uppercase tracking-[0.18em] text-warm-gold">{date}</div>
+      <div>
+        <div className="font-display text-[1.05rem] uppercase tracking-[0.18em] text-warm-gold">{date}</div>
+        <div className="mt-2 text-sm uppercase tracking-[0.22em] text-white/45">{time}</div>
+      </div>
       <div>
         <h3 className="font-display text-[2rem] leading-none text-white transition-colors duration-300 group-hover:text-accent-blue sm:text-[2.2rem]">
           {title}
@@ -55,9 +59,11 @@ export default function DepartureSection({ content, launches }: DepartureSection
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_15%,rgba(255,255,255,0.08),transparent_45%)]" />
               <div className="absolute bottom-4 left-4 border border-white/15 bg-black/25 px-6 py-5 backdrop-blur-md sm:bottom-6 sm:left-6">
                 <div className="font-display text-[10px] uppercase tracking-[0.24em] text-white/70">{content.label}</div>
-                <div className="mt-3 font-display text-3xl leading-none text-white sm:text-[3rem]">
-                  {content.countdown}
-                </div>
+                <LaunchCountdown
+                  launchDate={content.launchDate}
+                  launchTime={content.launchTime}
+                  className="mt-3 block font-display text-3xl leading-none text-white sm:text-[3rem]"
+                />
               </div>
             </div>
           </motion.div>

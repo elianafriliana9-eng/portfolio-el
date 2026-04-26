@@ -1,9 +1,10 @@
 ---
 import { render } from 'astro:content';
 
+import LaunchCountdown from '../../components/LaunchCountdown';
 import EntryLayout from '../../layouts/EntryLayout.astro';
-import { formatLongDate } from '../../lib/format';
 import { getDepartureEntries } from '../../lib/content';
+import { formatLaunchTime, formatLongDate, toUtcDateInput } from '../../lib/format';
 
 export async function getStaticPaths() {
   const departures = await getDepartureEntries();
@@ -26,10 +27,19 @@ const { Content } = await render(entry);
   backLabel="All departures"
   details={[
     { label: 'Launch Date', value: formatLongDate(entry.data.launchDate) },
-    { label: 'Countdown', value: entry.data.countdown },
+    { label: 'Launch Time', value: formatLaunchTime(entry.data.launchTime) },
     { label: 'Launch Site', value: entry.data.launchSite },
     { label: 'Mission Window', value: entry.data.missionWindow },
   ]}
 >
+  <div class="mb-10 border border-white/10 bg-white/[0.03] p-6 sm:p-7">
+    <div class="font-display text-[10px] uppercase tracking-[0.24em] text-accent-blue">Live Countdown</div>
+    <LaunchCountdown
+      client:load
+      launchDate={toUtcDateInput(entry.data.launchDate)}
+      launchTime={entry.data.launchTime}
+      className="mt-4 block font-display text-4xl leading-none text-white sm:text-5xl"
+    />
+  </div>
   <Content />
 </EntryLayout>

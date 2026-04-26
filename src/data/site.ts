@@ -33,6 +33,7 @@ export interface LaunchRowProps {
   date: string;
   detail: string;
   href: string;
+  time: string;
   title: string;
 }
 
@@ -50,9 +51,10 @@ export interface DiscoveryContent {
 
 export interface NextDepartureContent {
   allHref: string;
-  countdown: string;
   image: string;
   label: string;
+  launchDate: string;
+  launchTime: string;
   title: string;
 }
 
@@ -61,16 +63,26 @@ export interface FooterMeta {
   title: string;
 }
 
+export const siteNav: NavLink[] = [
+  { label: 'Missions', href: '/missions/' },
+  { label: 'Reports', href: '/reports/' },
+  { label: 'News', href: '/news/' },
+  { label: 'Departures', href: '/departures/' },
+  { label: 'Technology', href: '/technology/' },
+  { label: 'Science', href: '/science/' },
+  { label: 'About', href: '/about/' },
+];
+
 export const heroLeftNav: NavLink[] = [
-  { label: 'Missions', href: '#missions' },
-  { label: 'Explore', href: '#explore' },
-  { label: 'Science', href: '/#science' },
+  { label: 'Missions', href: '/missions/' },
+  { label: 'Explore', href: '/reports/' },
+  { label: 'Science', href: '/science/' },
 ];
 
 export const heroRightNav: NavLink[] = [
-  { label: 'Technology', href: '#technology' },
-  { label: 'News', href: '/reports/' },
-  { label: 'About', href: '#about' },
+  { label: 'Technology', href: '/technology/' },
+  { label: 'News', href: '/news/' },
+  { label: 'About', href: '/about/' },
 ];
 
 export const mobileNav: NavLink[] = [...heroLeftNav, ...heroRightNav];
@@ -80,11 +92,11 @@ export const heroContent: HeroContent = {
   paragraph:
     'We stand at the precipice of the infinite. AEON exists to push human ambition beyond the heliosphere, seeking answers in the dark, and bringing the light of understanding back home.',
   primaryCta: {
-    href: '#missions',
+    href: '/missions/',
     label: 'Explore Missions',
   },
   secondaryCta: {
-    href: '#science',
+    href: '/science/',
     label: 'Our Science',
   },
   utilityLabel: 'EST. 2024',
@@ -103,11 +115,6 @@ export const footerMeta: FooterMeta = {
     'Government-backed deep space exploration agency. Pushing the boundaries of human ambition and scientific discovery.',
 };
 
-export const footerDirectory: NavLink[] = [
-  { label: 'Missions', href: '/missions/' },
-  { label: 'Reports', href: '/reports/' },
-  { label: 'Technology', href: '/departures/' },
-  { label: 'Science', href: '/#science' },
-];
+export const footerDirectory: NavLink[] = [...siteNav];
 
 export const footerPolicies: string[] = ['Privacy', 'Terms', 'Classified'];

@@ -59,7 +59,7 @@ export default function HeroShell({
           }}
         >
           <img
-            src="/images/space-hero-bg.png"
+            src="/images/top_hero_image.png"
             alt=""
             className="absolute inset-0 h-full w-full object-cover object-top opacity-45 mix-blend-screen"
           />

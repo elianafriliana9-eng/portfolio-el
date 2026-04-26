@@ -39,7 +39,7 @@ const departures = defineCollection({
     title: z.string(),
     detail: z.string(),
     launchDate: z.coerce.date(),
-    countdown: z.string(),
+    launchTime: z.string().regex(/^([01]\d|2[0-3]):[0-5]\d(?::[0-5]\d)?$/),
     image: z.string().default('/images/rocket-launch.png'),
     launchSite: z.string(),
     missionWindow: z.string(),
@@ -47,8 +47,38 @@ const departures = defineCollection({
   }),
 });
 
+const news = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/news' }),
+  schema: z.object({
+    title: z.string(),
+    summary: z.string(),
+    publishedAt: z.coerce.date(),
+    author: z.string(),
+    desk: z.string(),
+    image: z.string().default('/images/space-hero-bg.png'),
+  }),
+});
+
+const pages = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/pages' }),
+  schema: z.object({
+    title: z.string(),
+    summary: z.string(),
+    eyebrow: z.string(),
+    image: z.string().default('/images/space-hero-bg.png'),
+    highlights: z.array(
+      z.object({
+        label: z.string(),
+        value: z.string(),
+      }),
+    ).default([]),
+  }),
+});
+
 export const collections = {
   missions,
   reports,
   departures,
+  news,
+  pages,
 };

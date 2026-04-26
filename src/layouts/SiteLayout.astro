@@ -1,6 +1,6 @@
 ---
 import FooterSection from '../components/FooterSection';
-import { footerDirectory, footerMeta, footerPolicies } from '../data/site';
+import { footerDirectory, footerMeta, footerPolicies, siteNav } from '../data/site';
 import '../styles/global.css';
 
 interface Props {
@@ -9,6 +9,25 @@ interface Props {
 }
 
 const { description = 'AEON Space Agency content archive.', title } = Astro.props;
+const currentPath = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
+
+function normalizePath(path: string) {
+  if (path === '/') {
+    return '/';
+  }
+
+  return path.endsWith('/') ? path : `${path}/`;
+}
+
+function isActivePath(path: string) {
+  const normalizedPath = normalizePath(path);
+
+  if (normalizedPath === '/') {
+    return currentPath === '/';
+  }
+
+  return currentPath === normalizedPath || currentPath.startsWith(normalizedPath);
+}
 ---
 
 <html lang="en" class="bg-page-bg">
@@ -28,16 +47,32 @@ const { description = 'AEON Space Agency content archive.', title } = Astro.prop
     <title>{title}</title>
   </head>
   <body class="bg-page-bg font-body text-white antialiased">
-    <div class="min-h-screen overflow-x-hidden bg-[radial-gradient(circle_at_top,rgba(74,158,255,0.08),transparent_28%),linear-gradient(to_bottom,#080d14,#05080c)]">
+    <div class="min-h-screen overflow-x-clip bg-[radial-gradient(circle_at_top,rgba(74,158,255,0.08),transparent_28%),linear-gradient(to_bottom,#080d14,#05080c)]">
       <header class="border-b border-white/8 bg-page-bg/90 backdrop-blur-sm">
-        <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 sm:px-8 lg:px-12">
-          <a href="/" class="font-display text-sm uppercase tracking-[0.28em] text-white/82 transition-colors duration-300 hover:text-accent-blue">
-            AEON / SPACE
-          </a>
-          <nav class="hidden items-center gap-6 font-display text-[11px] uppercase tracking-[0.24em] text-white/56 sm:flex">
-            <a href="/missions/" class="transition-colors duration-300 hover:text-accent-blue">Missions</a>
-            <a href="/reports/" class="transition-colors duration-300 hover:text-accent-blue">Reports</a>
-            <a href="/departures/" class="transition-colors duration-300 hover:text-accent-blue">Departures</a>
+        <div class="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-5 sm:px-8 lg:px-12">
+          <div class="flex items-center justify-between gap-6">
+            <a href="/" class="font-display text-sm uppercase tracking-[0.28em] text-white/82 transition-colors duration-300 hover:text-accent-blue">
+              AEON / SPACE
+            </a>
+            <span class="hidden font-display text-[10px] uppercase tracking-[0.26em] text-white/40 sm:inline">Public Network</span>
+          </div>
+          <nav class="flex flex-wrap items-center gap-x-5 gap-y-3 font-display text-[11px] uppercase tracking-[0.24em] sm:gap-x-6">
+            {siteNav.map((item) => {
+              const isActive = isActivePath(item.href);
+
+              return (
+                <a
+                  href={item.href}
+                  aria-current={isActive ? 'page' : undefined}
+                  class:list={[
+                    'transition-colors duration-300',
+                    isActive ? 'text-accent-blue' : 'text-white/56 hover:text-accent-blue',
+                  ]}
+                >
+                  {item.label}
+                </a>
+              );
+            })}
           </nav>
         </div>
       </header>

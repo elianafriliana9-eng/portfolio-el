@@ -3,7 +3,7 @@ title: EXOPLANET / K2-18B
 summary: Our deep space array has confirmed the presence of carbon-bearing molecules in the atmosphere of K2-18b, a habitable-zone exoplanet 120 light-years from Earth.
 label: Latest Report
 publishedAt: 2026-04-07
-image: /images/exoplanet.png
+image: /images/report-article-01.png
 spectrumBars: [40, 20, 60, 90, 45, 30, 80, 100, 50, 70, 30, 60]
 rangeStart: 0.5μm
 rangeEnd: 5.0μm

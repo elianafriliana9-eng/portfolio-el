@@ -3,7 +3,7 @@ title: HELIOSPHERE / BOUNDARY PARTICLE MAP
 summary: AEON's outer-array sensors have completed the agency's most detailed particle-density map of the heliosphere boundary to date.
 label: Mission Report
 publishedAt: 2026-02-02
-image: /images/space-hero-bg.png
+image: /images/report-article-03.png
 spectrumBars: [18, 24, 39, 55, 60, 68, 74, 79, 63, 51, 37, 29]
 rangeStart: 0.2au
 rangeEnd: 6.4au

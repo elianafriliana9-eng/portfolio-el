@@ -10,7 +10,11 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "build:vercel": "ASTRO_DEPLOY_TARGET=vercel astro build",
+    "build:cloudflare": "ASTRO_DEPLOY_TARGET=cloudflare astro build",
     "preview": "astro preview",
+    "preview:cloudflare": "npm run build:cloudflare && wrangler dev",
+    "deploy:cloudflare": "npm run build:cloudflare && wrangler deploy",
     "check": "astro check",
     "astro": "astro"
   },
@@ -36,5 +40,10 @@
     "react-dom": "^19.2.5",
     "sharp": "^0.34.5",
     "tailwindcss": "^4.2.2"
+  },
+  "devDependencies": {
+    "@astrojs/cloudflare": "^13.3.0",
+    "@astrojs/vercel": "^10.0.6",
+    "wrangler": "^4.87.0"
   }
 }

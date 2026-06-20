@@ -7,10 +7,10 @@ const departures = await getDepartureEntries();
 ---
 
 <CollectionIndexLayout
-  title="Next Departures"
-  eyebrow="Launch Schedule"
-  intro="Track AEON's upcoming departures, launch windows, and outbound payloads. Each item opens the full departure brief."
-  description="Browse the upcoming AEON launch and departure schedule."
+  title="Skills Portfolio"
+  eyebrow="Skill Categories"
+  intro="Overview of my technical, design, and professional skills."
+  description="Browse my technical and soft skills."
 >
   <div class="grid gap-6 lg:grid-cols-2">
     {departures.map((departure) => (
@@ -20,25 +20,20 @@ const departures = await getDepartureEntries();
       >
         <img src={departure.data.image} alt={departure.data.title} class="aspect-[4/3] w-full object-cover" />
         <div class="p-7 sm:p-8">
-          <div class="flex flex-wrap items-center gap-3 text-sm text-white/48">
-            <span class="font-display text-[10px] uppercase tracking-[0.24em] text-warm-gold">{formatLongDate(departure.data.launchDate)}</span>
-            <span>•</span>
-            <span>{formatLaunchTime(departure.data.launchTime)}</span>
-          </div>
-          <h2 class="mt-5 break-words font-display text-[2rem] leading-none text-white">{departure.data.title}</h2>
+          <h2 class="break-words font-display text-[2rem] leading-none text-white">{departure.data.title}</h2>
           <p class="mt-4 text-[1.02rem] text-white/72">{departure.data.detail}</p>
           <dl class="mt-8 grid gap-4 text-sm text-white/54">
             <div>
-              <dt class="font-display text-[10px] uppercase tracking-[0.22em] text-accent-blue">Launch Site</dt>
+              <dt class="font-display text-[10px] uppercase tracking-[0.22em] text-accent-blue">Category</dt>
               <dd class="mt-2 leading-6">{departure.data.launchSite}</dd>
             </div>
             <div>
-              <dt class="font-display text-[10px] uppercase tracking-[0.22em] text-accent-blue">Mission Window</dt>
+              <dt class="font-display text-[10px] uppercase tracking-[0.22em] text-accent-blue">Proficiency Level</dt>
               <dd class="mt-2 leading-6">{departure.data.missionWindow}</dd>
             </div>
           </dl>
           <span class="mt-8 inline-flex items-center gap-3 font-display text-[11px] uppercase tracking-[0.24em] text-white/55 transition-colors duration-300 group-hover:text-accent-blue">
-            Open launch brief <span aria-hidden="true">→</span>
+            View details <span aria-hidden="true">→</span>
           </span>
         </div>
       </a>

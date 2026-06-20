@@ -94,7 +94,7 @@ export default function DiscoverySection({ bars, content }: DiscoverySectionProp
             className="discovery-chart-card border border-white/20 p-6 backdrop-blur-md sm:p-8"
           >
             <div className="discovery-meta font-display text-[11px] uppercase tracking-[0.28em]">
-              Spectral Analysis
+              Skill Assessment
             </div>
             <div className="mt-8 grid h-44 grid-cols-12 items-end gap-2 sm:mt-10 sm:h-52 sm:gap-3">
               {bars.map((bar, index) => (

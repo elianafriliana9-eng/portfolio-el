@@ -233,8 +233,8 @@ export default function HeroShell({
               className="max-w-[11ch] font-display text-[1.65rem] leading-[0.92] font-bold uppercase tracking-[0.03em] text-navy-text sm:max-w-none sm:text-[2.5rem] md:text-[3.35rem] lg:text-[5.5rem]"
             >
               <span className="block">{content.eyebrow}</span>
-              <span className="mt-3 block bg-[linear-gradient(to_right,#1a5fa0,#8b6532)] bg-clip-text text-transparent">
-                AN ILLUSION
+              <span className="mt-2 block bg-[linear-gradient(to_right,#1a5fa0,#8b6532)] bg-clip-text text-transparent">
+                IT SYSTEMS DEVELOPER
               </span>
             </motion.h2>
 

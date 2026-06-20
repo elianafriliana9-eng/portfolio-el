@@ -33,7 +33,7 @@
     "@tailwindcss/vite": "^4.2.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "astro": "^6.1.6",
+    "astro": "^5.17.2",
     "framer-motion": "^12.38.0",
     "lucide-react": "^1.8.0",
     "react": "^19.2.5",
@@ -42,8 +42,8 @@
     "tailwindcss": "^4.2.2"
   },
   "devDependencies": {
-    "@astrojs/cloudflare": "^13.3.0",
-    "@astrojs/vercel": "^10.0.6",
+    "@astrojs/cloudflare": "^12.2.0",
+    "@astrojs/vercel": "^9.0.5",
     "wrangler": "^4.87.0"
   }
 }

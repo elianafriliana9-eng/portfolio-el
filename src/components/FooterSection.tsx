@@ -46,18 +46,18 @@ export default function FooterSection({ directory, meta, policies }: FooterSecti
             </div>
 
             <div>
-              <h3 className="font-display text-[11px] uppercase tracking-[0.26em] text-white/80">Coordinates</h3>
+              <h3 className="font-display text-[11px] uppercase tracking-[0.26em] text-white/80">Contact</h3>
               <div className="mt-6 space-y-3 text-[1.1rem] text-white/60">
-                <p>Launch Complex 39A</p>
-                <p>Cape Canaveral, FL</p>
-                <p>Earth, Sol System</p>
-                <p className="text-accent-blue">28.6082° N, 80.6041° W</p>
+                <p>Tangerang, Banten</p>
+                <p>Indonesia - 15560</p>
+                <p>+6285175090448</p>
+                <p className="text-accent-blue">elianafriliana9@gmail.com</p>
               </div>
             </div>
           </div>
 
           <div className="mt-16 flex flex-col gap-6 border-t border-white/8 pt-8 text-[0.95rem] uppercase tracking-[0.08em] text-white/42 md:flex-row md:items-center md:justify-between">
-            <p>© 2026 AEON SPACE AGENCY. ALL RIGHTS RESERVED.</p>
+            <p>© 2026 ELIAN AFRILINA. ALL RIGHTS RESERVED.</p>
             <div className="flex flex-wrap gap-6">
               {policies.map((policy) => (
                 <span key={policy}>{policy}</span>

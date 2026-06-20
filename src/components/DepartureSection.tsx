@@ -11,7 +11,7 @@ interface DepartureSectionProps {
   launches: LaunchRowProps[];
 }
 
-function LaunchRow({ date, detail, href, index, time, title }: LaunchRowProps & { index: number }) {
+function LaunchRow({ detail, href, index, title }: LaunchRowProps & { index: number }) {
   const ref = useRef<HTMLAnchorElement | null>(null);
   const isInView = useInView(ref, { once: true, amount: 0.5 });
 
@@ -22,12 +22,8 @@ function LaunchRow({ date, detail, href, index, time, title }: LaunchRowProps & 
       initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
       transition={{ duration: 0.78, delay: index * 0.14, ease: aeonEase }}
-      className="group -mx-4 grid gap-4 border-b border-white/10 px-4 py-6 transition-colors duration-300 hover:border-accent-blue/45 hover:bg-white/[0.04] md:grid-cols-[180px_minmax(0,1fr)] md:gap-6"
+      className="group -mx-4 block border-b border-white/10 px-4 py-6 transition-colors duration-300 hover:border-accent-blue/45 hover:bg-white/[0.04]"
     >
-      <div>
-        <div className="font-display text-[1rem] uppercase tracking-[0.18em] text-warm-gold transition-colors duration-300 group-hover:text-accent-blue sm:text-[1.05rem]">{date}</div>
-        <div className="departure-meta mt-2 text-sm uppercase tracking-[0.22em] transition-colors duration-300 group-hover:text-white/72">{time}</div>
-      </div>
       <div>
         <h3 className="departure-title break-words font-display text-[1.8rem] leading-none transition-colors duration-300 group-hover:text-accent-blue sm:text-[2.2rem]">
           {title}
@@ -50,21 +46,13 @@ export default function DepartureSection({ content, launches }: DepartureSection
             transition={fadeUpTransition}
             className="group relative overflow-hidden"
           >
-            <div className="relative aspect-[4/3] overflow-hidden">
+            <div className="relative aspect-square overflow-hidden rounded-lg bg-deep-space-card">
               <img
                 src={content.image}
-                alt="Featured launch window"
-                className="h-full w-full object-cover grayscale transition duration-700 group-hover:grayscale-0"
+                alt="Featured Skill Graphic"
+                className="h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_15%,rgba(255,255,255,0.08),transparent_45%)]" />
-              <div className="departure-countdown-panel absolute bottom-4 left-4 border border-white/15 px-4 py-4 backdrop-blur-md sm:bottom-6 sm:left-6 sm:px-6 sm:py-5">
-                <div className="departure-meta font-display text-[10px] uppercase tracking-[0.24em]">{content.label}</div>
-                <LaunchCountdown
-                  launchDate={content.launchDate}
-                  launchTime={content.launchTime}
-                  className="departure-title mt-3 block font-display text-[1.9rem] leading-none sm:text-[3rem]"
-                />
-              </div>
             </div>
           </motion.div>
 
@@ -79,7 +67,7 @@ export default function DepartureSection({ content, launches }: DepartureSection
                 href={content.allHref}
                 className="departure-meta group mb-5 hidden items-center gap-2 font-display text-[12px] uppercase tracking-[0.24em] transition-colors duration-300 hover:text-white md:inline-flex"
               >
-                View Schedule
+                View All Skills
                 <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" size={16} />
               </a>
               <h2 className="departure-title break-words font-display text-4xl leading-none font-bold sm:text-6xl">{content.title}</h2>

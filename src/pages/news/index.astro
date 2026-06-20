@@ -8,15 +8,15 @@ const [leadStory, ...otherStories] = newsEntries;
 ---
 
 <SiteLayout
-  title="AEON News"
-  description="Agency news, mission updates, and operational briefings from AEON Space Agency."
+  title="Blog & Updates"
+  description="Latest news and updates from Elian's portfolio."
 >
   <main class="mx-auto max-w-7xl px-6 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
     <section class="max-w-4xl">
-      <p class="font-display text-[11px] uppercase tracking-[0.28em] text-accent-blue">News Desk</p>
-      <h1 class="mt-5 break-words font-display text-[2.85rem] leading-none font-bold text-white sm:text-6xl lg:text-7xl">Agency News</h1>
+      <p class="font-display text-[11px] uppercase tracking-[0.28em] text-accent-blue">Latest Updates</p>
+      <h1 class="mt-5 break-words font-display text-[2.85rem] leading-none font-bold text-white sm:text-6xl lg:text-7xl">Blog & News</h1>
       <p class="mt-7 max-w-3xl text-lg leading-8 text-white/65 sm:text-xl">
-        Timed dispatches from mission control, the science directorate, and AEON's public network.
+        Thoughts, articles, and professional updates.
       </p>
     </section>
 
@@ -46,7 +46,7 @@ const [leadStory, ...otherStories] = newsEntries;
             </p>
             <div class="overlay-feature-meta mt-8 text-sm">By {leadStory.data.author}</div>
             <span class="mt-10 inline-flex items-center gap-3 font-display text-[11px] uppercase tracking-[0.24em] text-accent-blue transition-colors duration-300 group-hover:text-white">
-              Open dispatch <span aria-hidden="true">→</span>
+              Read article <span aria-hidden="true">→</span>
             </span>
           </div>
         </div>
@@ -73,7 +73,7 @@ const [leadStory, ...otherStories] = newsEntries;
               <p class="mt-5 text-[1.02rem] leading-8 text-white/68">{entry.data.summary}</p>
               <div class="mt-8 text-sm text-white/48">By {entry.data.author}</div>
               <span class="mt-8 inline-flex items-center gap-3 font-display text-[11px] uppercase tracking-[0.24em] text-white/55 transition-colors duration-300 group-hover:text-accent-blue">
-                Read story <span aria-hidden="true">→</span>
+                Read article <span aria-hidden="true">→</span>
               </span>
             </div>
           </a>

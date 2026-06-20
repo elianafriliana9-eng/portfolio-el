@@ -22,33 +22,16 @@ const logoSources: Record<BrandLogoKind, { dark: string; light: string }> = {
 
 export default function BrandLogo({
   className = '',
-  imageClassName = '',
   kind = 'wordmark',
-  label = 'AEON / SPACE',
+  label = "Elian's Portfolio",
   tone = 'theme',
 }: BrandLogoProps) {
-  const sources = logoSources[kind];
-
   return (
     <span
       aria-label={label}
-      className={`brand-logo brand-logo-${kind} brand-logo-tone-${tone} ${className}`.trim()}
-      role="img"
+      className={`font-display text-[1.2rem] font-bold tracking-[0.1em] uppercase leading-tight ${className}`.trim()}
     >
-      <img
-        alt=""
-        aria-hidden="true"
-        className={`brand-logo-image brand-logo-image-dark ${imageClassName}`.trim()}
-        decoding="async"
-        src={sources.dark}
-      />
-      <img
-        alt=""
-        aria-hidden="true"
-        className={`brand-logo-image brand-logo-image-light ${imageClassName}`.trim()}
-        decoding="async"
-        src={sources.light}
-      />
+      {kind === 'symbol' ? 'EP' : label}
     </span>
   );
 }

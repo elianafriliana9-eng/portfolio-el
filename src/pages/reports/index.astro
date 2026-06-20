@@ -7,10 +7,10 @@ const reports = await getReportEntries();
 ---
 
 <CollectionIndexLayout
-  title="Reports Archive"
-  eyebrow="Collection Archive"
-  intro="Every AEON report is stored as a structured Markdown entry, from flagship discoveries to mission-specific technical briefs."
-  description="Browse all reports and science briefs published by AEON Space Agency."
+  title="Education"
+  eyebrow="Academic Background"
+  intro="My educational background and academic journey."
+  description="Browse my educational background."
 >
   <div class="grid gap-6 lg:grid-cols-2">
     {reports.map((report) => (
@@ -29,7 +29,7 @@ const reports = await getReportEntries();
           <p class="mt-5 text-[1.02rem] leading-8 text-white/68">{report.data.summary}</p>
           <div class="mt-8 font-display text-[10px] uppercase tracking-[0.24em] text-accent-blue">{report.data.highlight}</div>
           <span class="mt-8 inline-flex items-center gap-3 font-display text-[11px] uppercase tracking-[0.24em] text-white/55 transition-colors duration-300 group-hover:text-accent-blue">
-            Read report <span aria-hidden="true">→</span>
+            View details <span aria-hidden="true">→</span>
           </span>
         </div>
       </a>

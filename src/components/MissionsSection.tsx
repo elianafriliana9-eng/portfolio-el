@@ -70,10 +70,10 @@ export default function MissionsSection({ missions }: MissionsSectionProps) {
             <div>
               <div className="flex items-center gap-3 font-display text-[11px] uppercase tracking-[0.26em] text-accent-blue">
                 <Activity size={16} strokeWidth={1.6} />
-                <span>Live Telemetry</span>
+                <span>Career Journey</span>
               </div>
               <h2 className="mt-5 break-words font-display text-[2.85rem] leading-none font-bold text-white sm:text-6xl">
-                Active Missions
+                Work Experience
               </h2>
             </div>
             <a

@@ -64,55 +64,51 @@ export interface FooterMeta {
 }
 
 export const siteNav: NavLink[] = [
-  { label: 'Missions', href: '/missions/' },
-  { label: 'Reports', href: '/reports/' },
+  { label: 'Experience', href: '/missions/' },
+  { label: 'Education', href: '/reports/' },
+  { label: 'Skills', href: '/departures/' },
   { label: 'News', href: '/news/' },
-  { label: 'Departures', href: '/departures/' },
-  { label: 'Technology', href: '/technology/' },
-  { label: 'Science', href: '/science/' },
   { label: 'About', href: '/about/' },
 ];
 
 export const heroLeftNav: NavLink[] = [
-  { label: 'Missions', href: '/missions/' },
-  { label: 'Explore', href: '/reports/' },
-  { label: 'Science', href: '/science/' },
+  { label: 'Experience', href: '/missions/' },
+  { label: 'Education', href: '/reports/' },
 ];
 
 export const heroRightNav: NavLink[] = [
-  { label: 'Technology', href: '/technology/' },
-  { label: 'News', href: '/news/' },
+  { label: 'Skills', href: '/departures/' },
   { label: 'About', href: '/about/' },
 ];
 
 export const mobileNav: NavLink[] = [...heroLeftNav, ...heroRightNav];
 
 export const heroContent: HeroContent = {
-  eyebrow: 'THE BOUNDARY IS',
+  eyebrow: 'ELIAN AFRILINA, SE',
   paragraph:
-    'We stand at the precipice of the infinite. AEON exists to push human ambition beyond the heliosphere, seeking answers in the dark, and bringing the light of understanding back home.',
+    'Dynamic and multi-skilled professional bridging the gap between technical infrastructure and visual storytelling by building robust full-stack applications while crafting high-impact visual assets.',
   primaryCta: {
     href: '/missions/',
-    label: 'Explore Missions',
+    label: 'View Experience',
   },
   secondaryCta: {
-    href: '/science/',
-    label: 'Our Science',
+    href: '/about/',
+    label: 'More About Me',
   },
-  utilityLabel: 'EST. 2024',
+  utilityLabel: 'Tangerang, Banten',
 };
 
 export const stats: StatBlockProps[] = [
-  { value: '14', label: 'Active Missions' },
-  { value: '4,200', label: 'Hours in Void' },
-  { value: '8', label: 'Planets Surveyed' },
-  { value: '2.4B', label: 'Miles Traveled' },
+  { value: '3.30', label: 'GPA' },
+  { value: '3+', label: 'Years Experience' },
+  { value: '4', label: 'Systems Built' },
+  { value: '10+', label: 'Design Tools' },
 ];
 
 export const footerMeta: FooterMeta = {
-  title: 'AEON',
+  title: 'ELIAN AFRILINA',
   description:
-    'Government-backed deep space exploration agency. Pushing the boundaries of human ambition and scientific discovery.',
+    'IT System Developer and Creative Design Professional based in Tangerang, Banten. (+6285175090448 | elianafriliana9@gmail.com)',
 };
 
 export const footerDirectory: NavLink[] = [...siteNav];

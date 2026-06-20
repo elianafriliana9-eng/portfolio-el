@@ -80,10 +80,10 @@ export function toDiscoveryContent(entry: ReportEntry): DiscoveryContent {
     body: entry.data.summary,
     cta: {
       href: `/reports/${entry.id}/`,
-      label: 'Read Report',
+      label: 'View Details',
     },
     archiveHref: '/reports/',
-    archiveLabel: 'View All Reports',
+    archiveLabel: 'View All Education',
     image: entry.data.image,
     rangeStart: entry.data.rangeStart,
     rangeEnd: entry.data.rangeEnd,
@@ -96,8 +96,8 @@ export function toSpectrumBars(entry: ReportEntry): SpectrumBarProps[] {
 
 export function toNextDepartureContent(entry: DepartureEntry): NextDepartureContent {
   return {
-    title: 'Next Departure',
-    label: 'T-Minus',
+    title: 'Key Skills',
+    label: 'Proficiency',
     launchDate: toUtcDateInput(entry.data.launchDate),
     launchTime: entry.data.launchTime,
     image: entry.data.image,

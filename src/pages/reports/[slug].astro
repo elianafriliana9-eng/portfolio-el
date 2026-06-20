@@ -23,12 +23,12 @@ const { Content } = await render(entry);
   summary={entry.data.summary}
   image={entry.data.image}
   backHref="/reports/"
-  backLabel="All reports"
+  backLabel="All education"
   details={[
     { label: 'Published', value: formatLongDate(entry.data.publishedAt) },
     { label: 'Highlight', value: entry.data.highlight },
-    { label: 'Range Start', value: entry.data.rangeStart },
-    { label: 'Range End', value: entry.data.rangeEnd },
+    { label: 'Start Year', value: entry.data.rangeStart },
+    { label: 'End Year', value: entry.data.rangeEnd },
   ]}
 >
   <Content />

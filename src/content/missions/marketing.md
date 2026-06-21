@@ -8,7 +8,7 @@ order: 3
 vehicle: Client Relations, Market Research
 missionWindow: 2023 - 2024
 destination: PT. Peksi Andaru Sakti (PASTI GROUP)
-coverImage: /images/mission-article-01.png
+coverImage: /images/marketing-thumbnail.png
 ---
 
 ## Key Responsibilities and Achievements

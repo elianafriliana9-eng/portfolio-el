@@ -57,7 +57,7 @@ export default function FooterSection({ directory, meta, policies }: FooterSecti
           </div>
 
           <div className="mt-16 flex flex-col gap-6 border-t border-white/8 pt-8 text-[0.95rem] uppercase tracking-[0.08em] text-white/42 md:flex-row md:items-center md:justify-between">
-            <p>© 2026 ELIAN AFRILINA. ALL RIGHTS RESERVED.</p>
+            <p>© 2026 ELIAN AFRILIANA. ALL RIGHTS RESERVED.</p>
             <div className="flex flex-wrap gap-6">
               {policies.map((policy) => (
                 <span key={policy}>{policy}</span>

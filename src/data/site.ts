@@ -84,7 +84,7 @@ export const heroRightNav: NavLink[] = [
 export const mobileNav: NavLink[] = [...heroLeftNav, ...heroRightNav];
 
 export const heroContent: HeroContent = {
-  eyebrow: 'ELIAN AFRILINA, SE',
+  eyebrow: 'ELIAN AFRILIANA, SE',
   paragraph:
     'Dynamic and multi-skilled professional bridging the gap between technical infrastructure and visual storytelling by building robust full-stack applications while crafting high-impact visual assets.',
   primaryCta: {
@@ -106,7 +106,7 @@ export const stats: StatBlockProps[] = [
 ];
 
 export const footerMeta: FooterMeta = {
-  title: 'ELIAN AFRILINA',
+  title: 'ELIAN AFRILIANA',
   description:
     'IT System Developer and Creative Design Professional based in Tangerang, Banten. (+6285175090448 | elianafriliana9@gmail.com)',
 };

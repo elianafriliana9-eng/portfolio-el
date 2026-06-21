@@ -5,7 +5,7 @@ eyebrow: Professional Profile
 image: /images/about1.jpeg
 highlights:
   - label: Name
-    value: Elian Afrilina, SE
+    value: Elian Afriliana, SE
   - label: Location
     value: Tangerang, Banten
   - label: Email

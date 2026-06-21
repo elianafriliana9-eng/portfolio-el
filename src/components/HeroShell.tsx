@@ -234,7 +234,7 @@ export default function HeroShell({
             >
               <span className="block">{content.eyebrow}</span>
               <span className="mt-2 block bg-[linear-gradient(to_right,#1a5fa0,#8b6532)] bg-clip-text text-transparent">
-                IT SYSTEMS DEVELOPER
+                IT SYSTEM DEVELOPER
               </span>
             </motion.h2>
 

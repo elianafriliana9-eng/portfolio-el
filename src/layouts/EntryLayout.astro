@@ -1,5 +1,6 @@
 ---
 import SiteLayout from './SiteLayout.astro';
+import ImageLightbox from '../components/ImageLightbox';
 
 interface DetailItem {
   label: string;
@@ -48,7 +49,7 @@ const {
 
       {image ? (
         <div class="overflow-hidden border border-white/10 bg-white/3">
-          <img src={image} alt={title} class="aspect-[4/3] h-full w-full object-cover" />
+          <img src={image} alt={title} class="aspect-square h-full w-full object-cover" />
         </div>
       ) : null}
     </section>
@@ -67,5 +68,6 @@ const {
     <article class="markdown-prose mt-12 max-w-4xl">
       <slot />
     </article>
+    <ImageLightbox client:load />
   </main>
 </SiteLayout>

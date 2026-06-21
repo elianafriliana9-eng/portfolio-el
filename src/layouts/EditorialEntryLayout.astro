@@ -1,5 +1,6 @@
 ---
 import SiteLayout from './SiteLayout.astro';
+import ImageLightbox from '../components/ImageLightbox';
 
 interface DetailItem {
   label: string;
@@ -68,5 +69,6 @@ const {
     <article class="markdown-prose mt-12 max-w-4xl text-pretty">
       <slot />
     </article>
+    <ImageLightbox client:load />
   </main>
 </SiteLayout>

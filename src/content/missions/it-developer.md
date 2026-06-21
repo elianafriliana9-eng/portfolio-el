@@ -8,7 +8,7 @@ order: 1
 vehicle: Laravel, Next.js, Flutter
 missionWindow: 2025 - Present
 destination: PT Mandala Karya Sentosa
-coverImage: https://placehold.co/1200x800/1a2e42/ffffff?text=IT+System+Developer
+coverImage: /images/it-developer-thumbnail.png
 ---
 
 ## Key Responsibilities and Achievements
@@ -24,15 +24,15 @@ coverImage: https://placehold.co/1200x800/1a2e42/ffffff?text=IT+System+Developer
 <div class="mt-8 grid gap-8 lg:grid-cols-[3fr_2fr]">
   <!-- Web/Desktop Screenshots -->
   <div class="grid gap-6 sm:grid-cols-2">
-    <img src="https://placehold.co/600x400/1a2e42/ffffff?text=Web+App+1" alt="Web Project 1" class="rounded border border-white/10 aspect-video object-cover w-full" />
-    <img src="https://placehold.co/600x400/1a2e42/ffffff?text=Web+App+2" alt="Web Project 2" class="rounded border border-white/10 aspect-video object-cover w-full" />
-    <img src="https://placehold.co/600x400/1a2e42/ffffff?text=Web+App+3" alt="Web Project 3" class="rounded border border-white/10 aspect-video object-cover w-full" />
-    <img src="https://placehold.co/600x400/1a2e42/ffffff?text=Web+App+4" alt="Web Project 4" class="rounded border border-white/10 aspect-video object-cover w-full" />
+    <img src="/images/projects/web1.png" alt="Web Project 1" class="lightbox-image cursor-zoom-in rounded border border-white/10 aspect-video object-cover w-full" />
+    <img src="/images/projects/web2.png" alt="Web Project 2" class="lightbox-image cursor-zoom-in rounded border border-white/10 aspect-video object-cover w-full" />
+    <img src="/images/projects/web3.png" alt="Web Project 3" class="lightbox-image cursor-zoom-in rounded border border-white/10 aspect-video object-cover w-full" />
+    <img src="/images/projects/web4.png" alt="Web Project 4" class="lightbox-image cursor-zoom-in rounded border border-white/10 aspect-video object-cover w-full" />
   </div>
 
   <!-- Mobile App Screenshots -->
   <div class="grid gap-6 grid-cols-2">
-    <img src="https://placehold.co/300x600/1a2e42/ffffff?text=Mobile+App+1" alt="Mobile Project 1" class="rounded border border-white/10 aspect-[9/16] object-cover w-full" />
-    <img src="https://placehold.co/300x600/1a2e42/ffffff?text=Mobile+App+2" alt="Mobile Project 2" class="rounded border border-white/10 aspect-[9/16] object-cover w-full" />
+    <img src="/images/projects/mobile1.png" alt="homepage sobatHR" class="lightbox-image cursor-zoom-in rounded border border-white/10 aspect-[9/16] object-cover w-full hover:opacity-80 transition-opacity" />
+    <img src="/images/projects/mobile2.png" alt="Mobile Project 2" class="lightbox-image cursor-zoom-in rounded border border-white/10 aspect-[9/16] object-cover w-full hover:opacity-80 transition-opacity" />
   </div>
 </div>

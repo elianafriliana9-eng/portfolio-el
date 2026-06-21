@@ -2,7 +2,7 @@
 title: About Me
 summary: Dynamic and multi-skilled professional bridging the gap between technical infrastructure and visual storytelling by building robust full-stack applications while crafting high-impact visual assets.
 eyebrow: Professional Profile
-image: /images/singleton-about.png
+image: /images/about1.jpeg
 highlights:
   - label: Name
     value: Elian Afrilina, SE
